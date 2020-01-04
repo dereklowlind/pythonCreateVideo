@@ -1,0 +1,1 @@
+ffmpeg -i ./testImages/mygeneratedvideo.avi -i output.mp3 -codec copy output.avi
