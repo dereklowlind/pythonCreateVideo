@@ -1,0 +1,55 @@
+.comAuthorstyle {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #0079D3;
+}
+
+.subAuthorstyle {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #6c6e70
+}
+
+.scorestyle {
+    font-size: 14px;
+    padding-right: 3px;
+}
+
+.paragraphstyle  {
+    font-family: Noto Sans,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    word-break: breakword;
+    overflow: auto;
+    padding-bottom: 1px;
+    margin-bottom: -1px;
+    margin-top: -1px;
+    color:#1A1A1B;
+}
+
+.linestyle {
+  border-left: 2px solid grey; /* #EDEFF1 */
+  padding-left: 5px;
+  margin: 5px;
+  display: "block";
+  height: 100%;  
+}  
+.flex-container {
+    display: flex;
+    /* background-color: DodgerBlue; */
+  }
+
+.arrows-and-line {
+    display: flex;
+    flex-direction: column;
+}
+
+.votearrow {
+    height: 12px;
+    width: 12px;
+    /* display: block; */
+    margin-top: 3px;
+}

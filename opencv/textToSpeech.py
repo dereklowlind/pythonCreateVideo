@@ -27,7 +27,7 @@ Estimated Retail Value:$187,000 <break strength="weak"/>\
 vin:ZFF67NFA8B0 </speak>'
 
 # Instantiates a client
-os.environ ["GOOGLE_APPLICATION_CREDENTIALS"]= './testInterviewAudio-4a428f5a82cf.json'
+os.environ ["GOOGLE_APPLICATION_CREDENTIALS"]= '/home/derek/D/testInterviewAudio-4a428f5a82cf.json'
 client = texttospeech.TextToSpeechClient()
 
 # Set the text input to be synthesized
