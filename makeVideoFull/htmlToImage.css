@@ -32,7 +32,7 @@
     padding-bottom: 2px;
     margin-bottom: -2px;
     margin-top: -2px;
-    color:#1A1A1B;
+    color: white; /* #1A1A1B */
 }
 
 .linestyle {
@@ -63,5 +63,5 @@ body {
     /* becomes 1920 by 1080 when out of processor */
     width: 1910px;
     height: 1064px;
-    background-color: white;
+    background-color: black;
 }
