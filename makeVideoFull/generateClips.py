@@ -39,7 +39,7 @@ def createClips(data, directoryName):
     imgFileName = "./" + directoryName + "/submission" + ".jpg"
     audioFileName = "./" + directoryName + "/submission" + ".mp3"
     videoFileName = "./" + directoryName + "/submission" + ".avi"
-    # createClip(imgFileName, audioFileName, videoFileName)
+    createClip(imgFileName, audioFileName, videoFileName)
 
     concatFiles = "file '" + currDir + "/" + directoryName + "/submission" + ".avi" + "'"
     # for comments
@@ -49,7 +49,7 @@ def createClips(data, directoryName):
             imgFileName = "./" + directoryName + "/" + str(i) + ".jpg"
             audioFileName = "./" + directoryName + "/" + str(i) + ".mp3"
             videoFileName = "./" + directoryName + "/" + str(i) + ".avi"
-            # createClip(imgFileName, audioFileName, videoFileName)
+            createClip(imgFileName, audioFileName, videoFileName)
             concatFiles += ("\nfile '" + currDir + "/" + directoryName + "/" + str(i) + ".avi" + "'")
     
     # concatenate clips together

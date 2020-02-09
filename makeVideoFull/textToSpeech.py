@@ -35,14 +35,14 @@ def callAudio(text, fileName):
     with open(fileName, 'wb') as out:
         # Write the response to the output file.
         out.write(response.audio_content)
-        print('Audio content written to file' + fileName)
+        print('Audio content written to file ' + fileName)
 
 def createAudio(data, directoryName):
     # make sure directory exists
     if not os.path.exists(directoryName):
         os.makedirs(directoryName)
     # create submission audio
-    callAudio(data["submissionData"]["body"], directoryName+"/submission.mp3")
+    callAudio(data["submissionData"]["title"], directoryName+"/submission.mp3")
     
     # create comment audio
     com = data["commentsData"]

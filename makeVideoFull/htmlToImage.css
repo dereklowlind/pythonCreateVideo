@@ -5,6 +5,11 @@
     color: #0079D3;
 }
 
+.subTitlesyle {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 48px;
+}
 .subAuthorstyle {
     font-size: 24px;
     font-weight: 400;
@@ -13,7 +18,7 @@
 }
 
 .scorestyle {
-    font-size: 28px;
+    font-size: 14px;
     padding-right: 6px;
 }
 

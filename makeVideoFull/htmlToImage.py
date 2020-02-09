@@ -10,7 +10,7 @@ css='''<link rel="stylesheet" href="''' + currentDir +  "htmlToImage.css" + '''"
 
 
 
-def subHTML(subAuthor, subBody, subScore):
+def subHTML(subAuthor, subTitle, subScore):
     subHTML = header + css + '''
         <div class="flex-container">
             <div class="arrows-and-line"> 
@@ -20,7 +20,7 @@ def subHTML(subAuthor, subBody, subScore):
             </div>
             <div>
                 <a class="subAuthorstyle">Posted by u/'''+ subAuthor +'''</a>
-                <p class="paragraphstyle">''' + subBody + '''</p>
+                <p class="subTitlesyle">''' + subTitle + '''</p>
             </div>
             </div>
     ''' + footer
@@ -50,7 +50,12 @@ def comHTML(entryAuthor, entryBody, level):
 
 def createSubmissionImage(sub, directoryName):
     fileName = "./" + directoryName + "/submission.jpg"
-    make = subHTML(sub["author"],sub["body"],sub["score"])
+    subScoreInt = int(sub["score"])
+    subScoreStr = sub["score"]
+    if subScoreInt >= 1000:
+        subScoreInt = format((subScoreInt/1000), '.1f')
+        subScoreStr = str(subScoreInt) +"K"
+    make = subHTML(sub["author"],sub["title"],subScoreStr)
     imgkit.from_string(make, fileName)
 
 def createCommentImages(com, directoryName):

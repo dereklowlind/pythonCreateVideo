@@ -1,5 +1,0 @@
-file '/media/derek/D/pythonCreateVideo/makeVideoFull/aaaa/submission.avi'
-file '/media/derek/D/pythonCreateVideo/makeVideoFull/aaaa/0.avi'
-file '/media/derek/D/pythonCreateVideo/makeVideoFull/aaaa/1.avi'
-file '/media/derek/D/pythonCreateVideo/makeVideoFull/aaaa/2.avi'
-file '/media/derek/D/pythonCreateVideo/makeVideoFull/aaaa/3.avi'
