@@ -73,7 +73,22 @@ def createCommentImages(com, directoryName):
                 make = header + css + comHTML(com[i]["author"],com[i]["body"],com[i]["level"])  + footer
             imgkit.from_string(make, fileName)
 
+def fix_string(data_str):
+    # fix the unicode quote
+    data_str = data_str.replace("’", "'")
+    data_str = data_str.replace("‘", "'")
+    data_str = data_str.decode('utf-8','ignore').encode("utf-8")
+    return data_str
+
+# fix the weird unicode quotes and maybe later swearing
+def fix_data(data):
+    data["submissionData"]["title"] = fix_string(data["submissionData"]["title"])
+    data["submissionData"]["body"] = fix_string(data["submissionData"]["body"])
+    for com in data["commentsData"]:
+        com["body"] = fix_string(com["body"])
+    return data
 def createImages(data, directoryName):
+    data_fixed = fix_data(data)
     # make sure directory exists
     if not os.path.exists(directoryName):
         os.makedirs(directoryName)

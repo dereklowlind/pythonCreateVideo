@@ -28,7 +28,7 @@ def createClip(imgFileName, audioFileName, videoFileName):
     os.system(cmd)
 
 
-def createClips(data, directoryName): 
+def createClips(data, directoryName, subId): 
     # make sure directory exists
     if not os.path.exists(directoryName):
         os.makedirs(directoryName)
@@ -57,7 +57,7 @@ def createClips(data, directoryName):
     f = open(toConcatFile, "w")
     f.write(concatFiles)
     f.close()
-    finalName = "./" + directoryName + "/final" + ".avi"
+    finalName = "./final_videos/" + subId + ".avi"
     concatCMD = "ffmpeg -y -f concat -safe 0 -i " + toConcatFile + " -c copy " + finalName
     # concatCMD = "ffmpeg -y -f concat -safe 0 -i " + toConcatFile + " -c copy " + finalName
     os.system(concatCMD)
