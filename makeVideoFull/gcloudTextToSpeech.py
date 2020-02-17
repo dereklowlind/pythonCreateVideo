@@ -42,12 +42,12 @@ def createAudio(data, directoryName):
     if not os.path.exists(directoryName):
         os.makedirs(directoryName)
     # create submission audio
-    callAudio(data["submissionData"]["title"], directoryName+"/submission.mp3")
+    callAudio(data["submissionData"]["title_speak"], directoryName+"/submission.mp3")
     
     # create comment audio
     com = data["commentsData"]
     for i in range(len(com)):
         if com[i]["isChecked"]:
             fileName = "./" + directoryName + "/" + str(i) + ".mp3"
-            callAudio(com[i]["body"], fileName)
+            callAudio(com[i]["body_speak"], fileName)
     

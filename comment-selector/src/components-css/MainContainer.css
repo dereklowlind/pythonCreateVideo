@@ -5,6 +5,12 @@
     color: #0079D3;
 }
 
+.subTitlesyle {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
 .subAuthorstyle {
     font-size: 12px;
     font-weight: 400;

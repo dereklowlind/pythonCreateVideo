@@ -31,7 +31,6 @@ class FileSelector extends React.Component {
     }
   
     render() {
-      const data = this.state.data;
       return (
         <div>
         <a>Select JSON File </a>

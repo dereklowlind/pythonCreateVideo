@@ -2,8 +2,8 @@ import React from 'react'
 import Checkbox from '@material-ui/core/Checkbox';
 import FileSelector from './FileSelector'
 import FileDownloader from './FileDownloader';
-import { ContentBlock } from 'material-ui/svg-icons';
-// import RedditComment from './RedditComment'
+import UrlGetJSON from './UrlGetJSON';
+// import UrlJS from './UrlJS'
 import '../components-css/MainContainer.css';
 import uparrow from '../images/reddit-uparrow.png';
 import downarrow from '../images/reddit-downarrow.png';
@@ -21,12 +21,6 @@ class MainContainer extends React.Component{
     handleChecked = (index, e) => {
       let json = this.state.data;
       json.commentsData[index].isChecked = !json.commentsData[index].isChecked;
-      // // flip 0 or 1
-      // if(json.commentsData[index].isChecked == 0){
-      //   json.commentsData[index].isChecked = 1;
-      // }else{
-      //   json.commentsData[index].isChecked = 0;
-      // }
       this.setState({data: json});
     }
     render() {
@@ -34,6 +28,8 @@ class MainContainer extends React.Component{
         if(json == null){
             return(
               <div>
+                {/* <UrlJS parentCallback = {this.callbackFunction}/> */}
+                <UrlGetJSON parentCallback = {this.callbackFunction}/>
                 <FileSelector parentCallback = {this.callbackFunction}/>
                 <div>no JSON loaded</div>
               </div>
@@ -42,7 +38,7 @@ class MainContainer extends React.Component{
             const commentHTML = json.commentsData.map((entry,index) => {
               let extraLevelTabs = []
               for(let i = 0; i < entry.level -1; i++){
-                  extraLevelTabs.push(<div className="linestyle"/>)
+                  extraLevelTabs.push(<div key={i} className="linestyle"/>)
               }
               return(
                     <div key={index} onClick={(e) => this.handleChecked(index,e)}>
@@ -64,19 +60,31 @@ class MainContainer extends React.Component{
                       </div>
                     )
               })
+        
+        let submissionScore = parseInt(json.submissionData.score);
+        console.log(submissionScore);
+        if(submissionScore >= 1000){
+          submissionScore = (submissionScore/1000).toFixed(1);
+          submissionScore = submissionScore + "K";
+        }
+        
         return (
             <div>
+                {/* <UrlJS parentCallback = {this.callbackFunction}/> */}
+                <UrlGetJSON parentCallback = {this.callbackFunction}/>
                 <FileSelector parentCallback = {this.callbackFunction}/>
                 <FileDownloader data={this.state.data}/>
                 <div className="flex-container">
                   <div className="arrows-and-line"> 
                       <img src={uparrow} className="votearrow"/>
-                      <a className="scorestyle">{json.submissionData.score}</a>
+                      <a className="scorestyle">{submissionScore}</a>
                       <img src={downarrow} className="votearrow"/>
                   </div>
                   <div>
+                    <a >{json.submissionData.score}</a>
                     <a className="subAuthorstyle">Posted by u/{json.submissionData.author}</a>
-                    <p className="paragraphstyle"> {json.submissionData.body} </p>
+                    <p className="subTitlestyle"> {json.submissionData.title} </p>
+                    {/* <p className="paragraphstyle"> {json.submissionData.body} </p> */}
                   </div>
                 </div>
                 

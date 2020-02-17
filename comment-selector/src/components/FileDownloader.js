@@ -5,7 +5,7 @@ class FileDownloader extends React.Component {
     const element = document.createElement("a");
     const file = new Blob([JSON.stringify(this.props.data)], {type: 'application/json'});
     element.href = URL.createObjectURL(file);
-    element.download = "myJSON.json";
+    element.download = this.props.data.id + ".json";
     document.body.appendChild(element); // Required for this to work in FireFox
     element.click();
   }

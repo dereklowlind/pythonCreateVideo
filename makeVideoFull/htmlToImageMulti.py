@@ -2,6 +2,7 @@
 import imgkit
 import os
 import json
+import multiprocessing
 
 currentDir = os.getcwd() + "/"
 header='<html><body>'
@@ -58,7 +59,12 @@ def createSubmissionImage(sub, directoryName):
     make = subHTML(sub["author"],sub["title_vis"],subScoreStr)
     imgkit.from_string(make, fileName)
 
+def callImgkit(make, fileName):
+    imgkit.from_string(make, fileName)
+    print("made: ", fileName, "\n")
+
 def createCommentImages(com, directoryName):
+    jobs = []
     for i in range(len(com)):
         if com[i]["isChecked"]:
             fileName = "./" + directoryName + "/" + str(i) + ".jpg"
@@ -71,7 +77,13 @@ def createCommentImages(com, directoryName):
                 make += footer
             else:
                 make = header + css + comHTML(com[i]["author"],com[i]["body_vis"],com[i]["level"])  + footer
-            imgkit.from_string(make, fileName)
+            # imgkit.from_string(make, fileName)
+            p = multiprocessing.Process(target=callImgkit, args=(make, fileName))
+            jobs.append(p)
+            p.start()
+    # make sure all the jobs finish before going on to the next task
+    for job in jobs:
+        job.join()
 
 def fix_string(data_str):
     # fix the unicode quote
