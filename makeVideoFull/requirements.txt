@@ -1,6 +1,5 @@
 opencv-python
-PIL
+Pillow
 mutagen
-multiprocessing
 gtts
 imgkit
