@@ -56,7 +56,15 @@ def createSubmissionImage(sub, directoryName):
         subScoreInt = format((subScoreInt/1000), '.1f')
         subScoreStr = str(subScoreInt) +"K"
     make = subHTML(sub["author"],sub["title_vis"],subScoreStr)
-    imgkit.from_string(make, fileName)
+    callImgkit(make, fileName)
+
+def callImgkit(make, fileName):
+    if os.name == 'nt':
+        config = imgkit.config(wkhtmltoimage='.\\packages\\windows\\wkhtmltox\\bin\wkhtmltoimage.exe')
+        imgkit.from_string(make, fileName, config=config)
+    else:
+        imgkit.from_string(make, fileName)
+    print("made: ", fileName, "\n")
 
 def createCommentImages(com, directoryName):
     for i in range(len(com)):
@@ -71,7 +79,7 @@ def createCommentImages(com, directoryName):
                 make += footer
             else:
                 make = header + css + comHTML(com[i]["author"],com[i]["body_vis"],com[i]["level"])  + footer
-            imgkit.from_string(make, fileName)
+            callImgkit(make, fileName)
 
 def fix_string(data_str):
     # fix the unicode quote

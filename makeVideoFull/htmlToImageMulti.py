@@ -57,10 +57,14 @@ def createSubmissionImage(sub, directoryName):
         subScoreInt = format((subScoreInt/1000), '.1f')
         subScoreStr = str(subScoreInt) +"K"
     make = subHTML(sub["author"],sub["title_vis"],subScoreStr)
-    imgkit.from_string(make, fileName)
+    callImgkit(make, fileName)
 
 def callImgkit(make, fileName):
-    imgkit.from_string(make, fileName)
+    if os.name == 'nt':
+        config = imgkit.config(wkhtmltoimage='.\\packages\\windows\\wkhtmltox\\bin\wkhtmltoimage.exe')
+        imgkit.from_string(make, fileName, config=config)
+    else:
+        imgkit.from_string(make, fileName)
     print("made: ", fileName, "\n")
 
 def createCommentImages(com, directoryName):

@@ -1,7 +1,7 @@
 import json
-from htmlToImageMulti import createImages
-from gttsTextToSpeechMulti import createAudio
-from generateClipsMulti import createClips
+from htmlToImage import createImages
+from gttsTextToSpeech import createAudio
+from generateClips import createClips
 import time
 import re
 
@@ -36,22 +36,22 @@ start_time = time.time()
 # open json
 file_name = 'esr647.json'
 directoryName = "data/" + file_name.split('.')[0]
-json_file = open("jsons/" + file_name)
+json_file = open("jsons/" + file_name, encoding="utf8")
 data = json.load(json_file)
 
 print(directoryName)
 
 data = fix_data(data)
 
-for com in data["commentsData"]:
-    print(com["body_speak"])
+# for com in data["commentsData"]:
+    # print(com["body_speak"])
     
 # print(data)
 # create images
-createImages(data, directoryName)
+# createImages(data, directoryName)
 
 # create audio
-createAudio(data, directoryName)
+# createAudio(data, directoryName)
 
 # combine images and audio into video clips
 createClips(data, directoryName, file_name.split('.')[0])
