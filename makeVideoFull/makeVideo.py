@@ -16,6 +16,7 @@ data = json.load(json_file)
 print(directoryName)
 
 data = fix_text(data)
+print(data)
 
 # create images
 # createImages(data, directoryName)

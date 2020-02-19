@@ -1,12 +1,15 @@
 import re
+import csv
 
 def fix_string(data_str):
-
-    data_vis = data_str.replace("fuck", "f**k")
-    data_vis = data_vis.replace("dick", "d**k")
-
-    data_speak = data_str.replace("fuck", "fk")
-    data_speak = data_speak.replace("dick", "dk")
+    f = open('word_replacement.csv', 'r')
+    words_to_replace = csv.reader(f)
+    next(words_to_replace)  # skip header row
+    data_vis = data_str
+    data_speak = data_str
+    for word in words_to_replace:
+        data_vis = data_vis.replace(word[0], word[1])
+        data_speak = data_speak.replace(word[0], word[2])
     data_speak = re.sub(r"\(?http\S+\)?", "", data_speak)
     
     return [data_vis, data_speak]
