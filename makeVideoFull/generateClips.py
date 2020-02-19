@@ -64,7 +64,7 @@ def createClips(data, directoryName, subId):
             imgFileName = "./" + directoryName + "/" + str(i) + ".jpg"
             audioFileName = "./" + directoryName + "/" + str(i) + ".mp3"
             videoFileName = "./" + directoryName + "/" + str(i) + ".avi"
-            # createClip(imgFileName, audioFileName, videoFileName, ffmpeg_path)
+            createClip(imgFileName, audioFileName, videoFileName, ffmpeg_path)
             if isWindows:
                 concatFiles += ("\nfile '" + currDir + "\\" + directoryName + "\\" + str(i) + ".avi" + "'")
             else:
@@ -79,6 +79,5 @@ def createClips(data, directoryName, subId):
     if isWindows:
         toConcatFile = toConcatFile.replace("/", "\\")
     concatCMD = ffmpeg_path + " -y -f concat -safe 0 -i " + toConcatFile + " -c copy " + finalName
-    # concatCMD = "ffmpeg -y -f concat -safe 0 -i " + toConcatFile + " -c copy " + finalName
-    # os.system(concatCMD)
+    os.system(concatCMD)
     print(concatCMD)
