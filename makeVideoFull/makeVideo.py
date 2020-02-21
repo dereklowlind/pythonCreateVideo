@@ -18,13 +18,13 @@ print(directoryName)
 data = fix_text(data)
 print(data)
 
-create images
+#create images
 createImages(data, directoryName)
 
-create audio
+#create audio
 createAudio(data, directoryName)
 
-combine images and audio into video clips
+#combine images and audio into video clips
 createClips(data, directoryName, file_name.split('.')[0])
 
 total_time = time.time() - start_time
