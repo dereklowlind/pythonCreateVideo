@@ -18,14 +18,14 @@ print(directoryName)
 data = fix_text(data)
 print(data)
 
-# create images
-# createImages(data, directoryName)
+create images
+createImages(data, directoryName)
 
-# create audio
-# createAudio(data, directoryName)
+create audio
+createAudio(data, directoryName)
 
-# combine images and audio into video clips
-# createClips(data, directoryName, file_name.split('.')[0])
+combine images and audio into video clips
+createClips(data, directoryName, file_name.split('.')[0])
 
 total_time = time.time() - start_time
 minutes = int(total_time/60)
