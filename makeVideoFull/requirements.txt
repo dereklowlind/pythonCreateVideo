@@ -1,0 +1,6 @@
+opencv-python
+PIL
+mutagen
+multiprocessing
+gtts
+imgkit
