@@ -1,0 +1,103 @@
+data/fv72ak
+----Origininal
+Instant sleep. Go to sleep as soon as you please. With added wide awake and refreshed feature when you wake up.
+---Tokenized
+Instant sleep.
+Go to sleep as soon as you please.
+With added wide awake and refreshed feature when you wake up.
+['Instant sleep.', 'Go to sleep as soon as you please.', 'With added wide awake and refreshed feature when you wake up.']
+
+----Origininal
+I believe that’s called marijuana, sir
+---Tokenized
+I believe that’s called marijuana, sir
+['I believe that’s called marijuana, sir']
+
+----Origininal
+Actually feeling like you slept the next morning.
+---Tokenized
+Actually feeling like you slept the next morning.
+['Actually feeling like you slept the next morning.']
+
+----Origininal
+Snore mute button
+
+Anti-puke setting on old dog
+
+Siren blocker
+
+Auto cool side of pillow flipper
+---Tokenized
+Snore mute button
+
+Anti-puke setting on old dog
+
+Siren blocker
+
+Auto cool side of pillow flipper
+['Snore mute button\n\nAnti-puke setting on old dog\n\nSiren blocker\n\nAuto cool side of pillow flipper']
+
+----Origininal
+1. No waiting period (sleep instantly)
+2. Full control of time (sleep cycles, waking up)
+3. Control of dreams
+4. Administrative dashboard to tweak settings (ie. REM vs non REM percentage)
+---Tokenized
+1.
+No waiting period (sleep instantly)
+2.
+Full control of time (sleep cycles, waking up)
+3.
+Control of dreams
+4.
+Administrative dashboard to tweak settings (ie.
+REM vs non REM percentage)
+['1.', 'No waiting period (sleep instantly)\n2.', 'Full control of time (sleep cycles, waking up)\n3.', 'Control of dreams\n4.', 'Administrative dashboard to tweak settings (ie.', 'REM vs non REM percentage)']
+
+----Origininal
++5. Delay setting for night-boners
+---Tokenized
++5.
+Delay setting for night-boners
+['+5.', 'Delay setting for night-boners']
+
+----Origininal
+Download you dreams as video files
+---Tokenized
+Download you dreams as video files
+['Download you dreams as video files']
+
+----Origininal
+I can't believe this hasn't been suggested yet...
+
+Wake up with fresh breath.
+
+Especially helpful for people who share the same bed.
+---Tokenized
+I can't believe this hasn't been suggested yet...
+
+Wake up with fresh breath.
+Especially helpful for people who share the same bed.
+["I can't believe this hasn't been suggested yet...\n\nWake up with fresh breath.", 'Especially helpful for people who share the same bed.']
+
+----Origininal
+1.you can continue your dream after waking up
+2.you select what to dram
+3.sleep faster
+4.dream with other people without premium
+5.you can select music
+---Tokenized
+1.you can continue your dream after waking up
+2.you select what to dram
+3.sleep faster
+4.dream with other people without premium
+5.you can select music
+['1.you can continue your dream after waking up\n2.you select what to dram\n3.sleep faster\n4.dream with other people without premium\n5.you can select music']
+
+----Origininal
+Number 1 is actually sleep paralysis and is pretty terrifying for a lot of people
+---Tokenized
+Number 1 is actually sleep paralysis and is pretty terrifying for a lot of people
+['Number 1 is actually sleep paralysis and is pretty terrifying for a lot of people']
+
+My program took 0 minutes 0 seconds to run

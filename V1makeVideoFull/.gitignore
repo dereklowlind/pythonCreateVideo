@@ -1,0 +1,4 @@
+# ignore the data directory
+/data
+/final_videos
+__pycache__
